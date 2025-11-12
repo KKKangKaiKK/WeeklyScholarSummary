@@ -1,0 +1,50 @@
+{
+  "rss_feeds": [
+    "https://deepmind.com/blog/feed/basic/",
+    "https://blogs.nvidia.com/feed/",
+    "https://openai.com/blog/rss/",
+    "https://rocm.blogs.amd.com/blog/atom.xml",
+    "https://www.nature.com/subjects/computational-biology-and-bioinformatics.rss",
+    "https://bmcbioinformatics.biomedcentral.com/articles/most-recent/rss.xml",
+    "http://feeds.nature.com/nature/rss/current",
+    "https://journals.plos.org/ploscompbiol/feed/atom",
+    "http://www.bio-itworld.com/RSS/BioIT_WorldNews_RSS.aspx",
+    "https://global.oup.com/academic/category/science-and-mathematics/biological-sciences/?cc=nz&lang=en&view=RSS",
+    "https://www.omnycontent.com/d/playlist/e763ee7a-311f-4004-8c05-ad8a0018d51b/68fe80a5-856c-4341-9f13-ada1016db982/dddf1674-4d7d-4aaf-a7f9-ada1016db98c/podcast.rss",
+    "https://academic.oup.com/rss/site_5139/3001.xml",
+    "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sciadv",
+    "https://academic.oup.com/rss/site_5139/advanceAccess_3001.xml",
+    "https://academic.oup.com/rss/site_5143/3005.xml",
+    "https://www.nature.com/nmeth.rss",
+    "https://pubs.acs.org/action/showFeed?type=axatoc&feed=rss&jc=jcisd8",
+    "https://pubs.acs.org/action/showFeed?type=axatoc&feed=rss&jc=jprobs",
+    "https://www.news-medical.net/tag/feed/Bioinformatics.aspx",
+    "https://bioinfoinc.com/feed/",
+    "https://www.nature.com/subjects/bioinformatics.rss",
+    "https://www.nature.com/subjects/bioinformatics/ncomms.rss",
+    "https://pubs.acs.org/action/showFeed?type=axatoc&feed=rss&jc=jctcce",
+    "https://advanced.onlinelibrary.wiley.com/feed/21983844/most-recent",
+    "https://feeds.aps.org/rss/tocsec/PRA-Atomicandmolecularstructureanddynamics.xml?_gl=1*88q88s*_gcl_au*Nzc0ODgxMjQ4LjE3NjI4NDM5OTM.",
+    "https://www.nature.com/nature.rss",
+    "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science"
+  ],
+  "interesting_topics": [
+    "XXX"
+  ],
+  "llm_clients": [
+    {
+    "name":"Primary Mac Studio Worker",
+    "api_key": "XXXXX",
+    "api_base": "https://XXXX/v1",
+    "model":"qwen3-235b-a22b-thinking-2507-mlx",
+    "verify_ssl": false
+   },
+    {
+    "name":"Mac Studio Flash 4B Worker",
+    "model":"qwen/qwen3-4b-thinking-2507",
+    "verify_ssl": false
+   }
+  ],
+  "output_filename": "weekly_summary.html",
+  "cache_filename_prefix": "rss_bot_cache"
+}

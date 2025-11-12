@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>每周汇总</title>
+</head>
+<body>
+    <h1>正在跳转到最新的每周汇总...</h1>
+
+    <script>
+        // 替换为您的GitHub信息
+        const owner = 'your_username';
+        const repo = 'your_repository';
+        // 如果文件在根目录，将path留空 ('')
+        const path = 'path_to_your_folder'; 
+
+        // 构建API请求URL
+        const apiUrl = `https://api.github.com/repos/KKKangKaiKK/WeeklyScholarSummary/contents/summaries;
+
+        // 使用fetch API获取文件夹内容
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // 筛选出符合 年-月-日.html 格式的文件
+                const summaryFiles = data.filter(file => {
+                    // 使用正则表达式匹配文件名格式
+                    return /^\d{4}-\d{2}-\d{2}\.html$/.test(file.name);
+                });
+
+                if (summaryFiles.length > 0) {
+                    // 基于文件名进行排序，找到最新的文件
+                    summaryFiles.sort((a, b) => b.name.localeCompare(a.name));
+                    const latestFile = summaryFiles[0];
+
+                    // 构建跳转链接
+                    // 注意：这里需要跳转到GitHub Pages的URL，而不是GitHub仓库的URL
+                    const redirectUrl = `https://your_username.github.io/your_repository/${path ? path + '/' : ''}${latestFile.name}`;
+                    
+                    // 执行跳转
+                    window.location.href = redirectUrl;
+                } else {
+                    document.body.innerHTML = '<h1>未找到任何周报文件。</h1>';
+                }
+            })
+            .catch(error => {
+                console.error('获取文件列表时出错:', error);
+                document.body.innerHTML = '<h1>加载最新周报失败，请检查网络或配置。</h1>';
+            });
+    </script>
+</body>
+</html>
