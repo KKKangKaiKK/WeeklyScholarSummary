@@ -8,13 +8,13 @@
 
     <script>
         // 替换为您的GitHub信息
-        const owner = 'your_username';
-        const repo = 'your_repository';
+        const owner = 'kkkangkaikk';
+        const repo = 'WeeklyScholarSummary';
         // 如果文件在根目录，将path留空 ('')
-        const path = 'path_to_your_folder'; 
+        const path = ''; 
 
         // 构建API请求URL
-        const apiUrl = `https://api.github.com/repos/KKKangKaiKK/WeeklyScholarSummary/contents/summaries;
+        const apiUrl = `https://api.github.com/repos/KKKangKaiKK/WeeklyScholarSummary/contents/summaries`;
 
         // 使用fetch API获取文件夹内容
         fetch(apiUrl)
@@ -33,7 +33,7 @@
 
                     // 构建跳转链接
                     // 注意：这里需要跳转到GitHub Pages的URL，而不是GitHub仓库的URL
-                    const redirectUrl = `https://your_username.github.io/your_repository/${path ? path + '/' : ''}${latestFile.name}`;
+                    const redirectUrl = `https://kkkangkaikk.github.io/WeeklyScholarSummary/summaries/${path ? path + '/' : ''}${latestFile.name}`;
                     
                     // 执行跳转
                     window.location.href = redirectUrl;
