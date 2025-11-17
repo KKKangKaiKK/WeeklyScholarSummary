@@ -3,12 +3,11 @@ import json
 import os
 import re
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta,date
 from concurrent.futures import ThreadPoolExecutor
 import feedparser
 from bs4 import BeautifulSoup
 import html
-import datetime
 
 
 
@@ -321,7 +320,7 @@ def main():
 
     print("\n--- 开始生成 HTML 报告 ---")
 
-    today = datetime.date.today()
+    today = date.today()
     formatted_date = today.strftime("%Y-%m-%d")
     generate_html_inline_css(categorized_articles, summaries, f"{formatted_date}.html")
 
