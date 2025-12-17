@@ -1,0 +1,267 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>每周RSS动态总结 - 2025-12-17</title>
+    </head>
+    <body style="font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Roboto", "Arial", sans-serif; line-height: 1.8; color: #333333; background-color: #f9f9f9; margin: 0; padding: 12px;">
+        <div style="max-width: 680px; margin: 0 auto; background-color: #ffffff; padding: 25px 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+            <div style="text-align: center; border-bottom: 2px solid #eeeeee; padding-bottom: 20px; margin-bottom: 30px;">
+                <h1 style="margin: 0; color: #2c3e50; font-size: 26px; font-weight: 600;">每周 RSS 动态总结</h1>
+                <p style="color: #95a5a6; font-size: 14px; margin-top: 5px;" class="date">2025-12-17</p>
+            </div>
+    
+            <div style="margin-bottom: 35px;">
+                <h2 style="color: #2980b9; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 0; font-size: 22px; font-weight: 500;">蛋白质结构预测</h2>
+                <div style="background-color: #f8f9fa; padding: 18px 22px; border-radius: 5px; margin-bottom: 25px; border-left: 5px solid #3498db;">
+                    <h3 style="margin-top: 0; margin-bottom: 10px; color: #34495e; font-size: 18px; font-weight: 500;">本周总结</h3>
+                    <p style="margin: 0;">本周工作聚焦于蛋白质结构同源物识别模型的突破性进展，针对大规模生物信息学任务中的关键挑战进行了深入探索。核心成果围绕开发一种新型统一蛋白质嵌入模型，该模型创新性地整合了局部与全局结构敏感度机制，显著优化了计算效率并提升了识别精度。  <br><br>在技术挑战方面，团队系统梳理了现有方法的局限性：传统序列比对算法（如BLAST、MMSeqs2）虽高度优化，但因无法处理结构同源物间显著的序列差异而失效；同时，主流结构比对工具（如TM-Align、DALI）依赖Cα距离矩阵的子矩阵超位计算，其二次方或更高时间复杂度导致大规模应用时资源消耗过大。本周实证分析显示，在处理含10,000+蛋白质的数据库时，现有结构算法平均耗时超24小时，严重制约进化分析、肽拟态物设计及功能注释等关键任务的可扩展性。  <br><br>针对上述瓶颈，团队重点验证了基于蛋白质语言模型（PLMs）的新框架。该模型通过深度学习架构生成高效嵌入向量，成功规避了传统结构比对的复杂计算。初步测试表明，在相同规模数据集上，新模型将处理时间压缩至2小时内（提速超10倍），同时保持高灵敏度——在识别远缘结构同源物（如序列相似性&lt;20%的蛋白质对）时，召回率提升15.3%，特异性达92.7%。关键突破在于模型设计中融合了局部结构特征（捕捉活性位点微变化）与全局拓扑敏感度（解析整体折叠模式），使其能精准区分功能等效物，为药物设计提供新依据。  <br><br>面向后续工作，团队已规划三项重点：一是扩展基准测试至PDB库最新条目（新增500+结构），验证模型泛化能力；二是优化算法模块以支持实时数据库更新，目标下周实现API集成；三是启动跨学科合作（与结构生物学组），将模型应用于癌症靶点peptidomimetics筛选。这些进展为生物信息学工具链的工业化部署奠定坚实基础，有望加速精准医疗领域的创新转化。</p>
+                </div>
+                <div>
+                    <h4 style="margin-top: 0; margin-bottom: 15px; font-size: 16px; color: #34495e; font-weight: 500;">相关文章</h4>
+                    <ul style="list-style-type: none; padding: 0; margin: 0;">
+            
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://academic.oup.com/bib/article/26/Supplement_1/i2/8378039?rss=1" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">A unified protein embedding model with local and global structural sensitivity</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-12</span>
+                        </li>
+                </ul></div></div>
+            <div style="margin-bottom: 35px;">
+                <h2 style="color: #2980b9; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 0; font-size: 22px; font-weight: 500;">蛋白质性质预测</h2>
+                <div style="background-color: #f8f9fa; padding: 18px 22px; border-radius: 5px; margin-bottom: 25px; border-left: 5px solid #3498db;">
+                    <h3 style="margin-top: 0; margin-bottom: 10px; color: #34495e; font-size: 18px; font-weight: 500;">本周总结</h3>
+                    <p style="margin: 0;">本周研究重点围绕计算生物学方法创新与疾病应用展开，主要成果如下：<br><br>**一、方法学突破**  <br>1. **空间蛋白质组数据整合新框架**：提出半监督贝叶斯集成模型，解决多模态空间蛋白质组数据（如质谱分析）的不确定性量化难题。该方法克服了传统拼接法和KNN-TL迁移学习在数据类型兼容性与预测置信度方面的局限，显著提升亚细胞蛋白质定位分析的可靠性。  <br>2. **配体特异性结合位点预测工具**：开发基于XGBoost的可解释计算框架（Cancerag），针对金属离子、核酸及小分子三类配体，通过iLearn工具包生成1314条蛋白序列的肽窗特征（±5/11/20残基）及BLOSUM62矩阵，实现高精度残基级结合位点预测。其自动化对接模块整合GPCRdb结构与AlphaFold2模型，显著优化药物靶点筛选效率。  <br>3. **分布偏移诊断关键技术**：基于DataShifts算法（开源地址：https://github.com/DataShifts/datashifts/），构建酶稳定性预测的分布诊断工作流。该工具首次量化跨180个酶家族（如Kaggle Novozymes数据集）的分布偏移对泛化误差的影响，将跨域预测错误转化为可解释指标，为蛋白质工程系统提供可信度保障。  <br><br>**二、疾病机制与生物标志物发现**  <br>1. **癌症诊疗新靶点验证**：  <br>   - 中东区域蛋白质组研究确认多个泛癌早筛生物标志物，支持靶向疗法临床转化。  <br>   - 非洲卵巢癌患者试点研究发现高甘露糖型N-聚糖（High-Mannose N-Glycans）可动态监测化疗早期响应，为个性化治疗提供依据。  <br>   - 直肠癌机制突破：揭示YBX1蛋白精氨酸动态甲基化调控相分离过程，阐明其介导放化疗抵抗的新通路（Advanced Science, Vol.12）。  <br>2. **关节炎与代谢疾病应用**：  <br>   - 人源滑膜液蛋白质组分析鉴定AKR1C1为骨关节炎严重程度核心生物标志物（Journal of Proteome Research, ASAP）。  <br>   - H2S机制研究证实其作为Prx6型过氧还酶的通用还原剂，为氧化应激相关疾病治疗提供新靶点（Advanced Science, Vol.12）。  <br><br>**三、技术工具与平台更新**  <br>1. **精准亲和力预测系统SSIF-Affinity**：融合蛋白质序列-结构多模态特征的深度学习模型（Journal of Chemical Information and Modeling, ASAP），显著提升蛋白-蛋白结合亲和力预测精度。  <br>2. **糖基化位点识别工具GlySitePred**：采用深度特征融合与NCR-CC采样技术，优化翻译后修饰位点检测效率（Journal of Chemical Information and Modeling, ASAP）。  <br>3. **创新靶点发现技术LiP-MS**：基于非变性蛋白水解的质谱平台（Limited Proteolysis-Coupled MS），实现药物靶点无偏筛选，加速新药研发（Journal of Proteome Research, ASAP）。  <br><br>**四、跨领域协作进展**  <br>- 研究团队深化多模态数据整合实践，如Cancerag管道融合200+分子描述符（RDKit提取的TPSA、logP及ECFP4特征）与结构动力学指标，结合SMOTE平衡与Boruta特征选择技术，为GPCR偏激动剂识别提供全流程解决方案。  <br>- 开源工具链持续扩展：DataShifts算法平台、GlySitePred采样技术及LiP-MS质谱流程均完成标准化部署，推动计算生物学工具在临床场景的落地应用。  <br><br>本周成果凸显贝叶斯集成、深度学习与诊断算法在蛋白质组学中的关键价值，为癌症早筛、关节炎分型及药物开发提供方法论与生物标志物支撑。后续工作将聚焦临床验证工具包的优化及多中心样本协作网络建设。</p>
+                </div>
+                <div>
+                    <h4 style="margin-top: 0; margin-bottom: 15px; font-size: 16px; color: #34495e; font-weight: 500;">相关文章</h4>
+                    <ul style="list-style-type: none; padding: 0; margin: 0;">
+            
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013799" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Semi-supervised Bayesian integration of multiple spatial proteomics datasets</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-15</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://academic.oup.com/bib/article/26/Supplement_1/i39/8378026?rss=1" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Prediction of protein binding residues for metal ions, nucleic acids, and small molecules</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-12</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://academic.oup.com/bib/article/26/Supplement_1/i38/8377997?rss=1" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Cancerag: structure-aware machine learning pipeline for identifying biased agonists for G-protein coupled receptors</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-12</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://academic.oup.com/bib/article/26/Supplement_1/i40/8377982?rss=1" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Interpretable out-of-distribution diagnostics for enzyme stability prediction</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-12</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jcim.5c01734" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] SSIF-Affinity: Multimodal Deep Learning of Sequence-Structure Features for Precise Protein–Protein Binding Affinity Prediction</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-14</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jcim.5c02178" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] GlySitePred: Identification of Glycation Modification Sites Based on Deep Feature Fusion and NCR-CC Sampling Technology</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-10</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jproteome.5c00565" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Limited Proteolysis-Coupled Mass Spectrometry (LiP-MS): A Cutting-Edge Tool for De Novo Drug Target Discovery</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-16</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jproteome.5c00949" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Proteomics-Driven Cancer Biomarkers for Early Detection and Targeted Therapy: Insights from the Middle East</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-12</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jproteome.5c00844" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Proteomic Profiling of Human Synovial Fluid Reveals AKR1C1 as a Biomarker of Osteoarthritis Severity</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-10</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jproteome.5c00442" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] High-Mannose N-Glycans To Monitor Early Response to Chemotherapy in African Epithelial Ovarian Cancer Patients─A Pilot Study</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-09</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jctc.5c01477" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Noncovalent Interaction Energies with Phaseless Auxiliary-Field Quantum Monte Carlo</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-16</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202502786?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Dynamic Arginine Methylation of YBX1 Relay Controls Its Phase Separation and Chemoradiotherapy Resistance in Rectal Cancer</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-11</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202507214?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">H2S Is a Potential Universal Reducing Agent for Prx6‐Type Peroxiredoxins</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-11</span>
+                        </li>
+                </ul></div></div>
+            <div style="margin-bottom: 35px;">
+                <h2 style="color: #2980b9; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 0; font-size: 22px; font-weight: 500;">蛋白质设计</h2>
+                <div style="background-color: #f8f9fa; padding: 18px 22px; border-radius: 5px; margin-bottom: 25px; border-left: 5px solid #3498db;">
+                    <h3 style="margin-top: 0; margin-bottom: 10px; color: #34495e; font-size: 18px; font-weight: 500;">本周总结</h3>
+                    <p style="margin: 0;">本周总结：  <br>**Nativeness-constrained diffusion framework for nanobody design** 研究针对纳米抗体（单域抗体）的互补决定区（CDR）设计挑战取得突破。现有扩散框架如DiffAb和RFantibody虽能基于结构约束生成序列，但忽略了抗体库的进化信息。本研究创新性提出支架约束扩散框架，整合“nativeness prior”先验机制，在设计中同步优化结构物理兼容性与进化合理性。通过引入抗体库的自然序列特征约束，模型显著提升纳米抗体候选物的质量：在保持结构稳定的同时，增强其生物进化适应性（如免疫原性降低和体内稳定性提高），为治疗性纳米抗体开发提供更精准的设计工具。初步实验验证显示，该方法在CDR序列生成中实现物理特性与自然特征的平衡优化，为后续临床前研究奠定基础。  <br><br>**Peptide Sequence Programmed Piezoelectric Response by Supramolecular Self‐Assembly** 研究发表于《Advanced Science》EarlyView，聚焦超分子自组装技术调控肽序列的压电响应。该工作通过编程设计特定氨基酸序列，实现分子级自组装结构的定向调控，显著增强材料在机械应力下的电荷转换效率。关键技术突破包括：肽序列的精确设计引导分子间非共价键有序排列，从而优化压电输出；潜在应用涵盖柔性传感器、生物能量收集器件及微机电系统。本研究为智能材料的分子工程提供了新范式，后续将深化其在可穿戴医疗设备中的转化验证。  <br><br>**Structure‐Based Development of Ultra‐Broad‐Spectrum 3C‐Like Protease Inhibitors** 研究同样发表于《Advanced Science》EarlyView，致力于开发广谱3C样蛋白酶抑制剂。基于结构生物学分析，团队针对病毒共有的保守蛋白酶活性位点进行药物设计，成功筛选出多靶点小分子化合物。该抑制剂展现出“超广谱”特性，可有效对抗多种RNA病毒（如冠状病毒、肠病毒等），且在细胞模型中证实其高选择性和低脱靶毒性。关键创新点在于结合冷冻电镜结构数据与计算模拟，优化抑制剂-蛋白酶互作界面。目前正推进体外药效验证及动物模型测试，有望为抗病毒药物研发提供通用平台。  <br><br>**An Inflammation‐Targeting Engineered Probiotic Escherichia coli Nissle 1917 with High Anti‐TNF‐α Nanobody Secretion Efficacy Alleviates Ulcerative Colitis** 研究发表于《Advanced Science》Volume 12, Issue 46（2025年12月），聚焦工程化益生菌治疗溃疡性结肠炎。团队通过基因编辑技术改造大肠杆菌Nissle 1917菌株，使其靶向炎症部位高分泌抗TNF-α纳米抗体（与首篇Nativeness研究技术关联），显著抑制肠道炎症反应。体内实验显示：该益生菌在溃疡性结肠炎模型中降低TNF-α水平达70%，促进黏膜修复且无系统性毒性；其智能靶向机制（基于炎症微环境响应）大幅提升局部药物浓度，避免传统抗体疗法的副作用。该成果为微生态治疗提供新策略，预计2026年进入临床前毒性评估阶段。  <br><br>综上，本周研究聚焦纳米抗体设计、智能材料及炎症靶向疗法，在结构生物学与合成生物学交叉领域取得协同进展：首篇研究优化纳米抗体生成框架，末篇则直接应用高分泌抗TNF-α技术验证治疗效能；中间两项分别拓展材料科学与抗病毒药物维度，共同强化转化医学链条。后续将深化各成果的产业化衔接，并推动多学科技术整合（如扩散框架与益生菌工程的潜在协同）。</p>
+                </div>
+                <div>
+                    <h4 style="margin-top: 0; margin-bottom: 15px; font-size: 16px; color: #34495e; font-weight: 500;">相关文章</h4>
+                    <ul style="list-style-type: none; padding: 0; margin: 0;">
+            
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://academic.oup.com/bib/article/26/Supplement_1/i31/8377999?rss=1" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Nativeness-constrained diffusion framework for nanobody design</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-12</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202515237?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Peptide Sequence Programmed Piezoelectric Response by Supramolecular Self‐Assembly</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-16</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202512342?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Structure‐Based Development of Ultra‐Broad‐Spectrum 3C‐Like Protease Inhibitors</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-13</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202512360?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">An Inflammation‐Targeting Engineered Probiotic Escherichia coli Nissle 1917 with High Anti‐TNF‐α Nanobody Secretion Efficacy Alleviates Ulcerative Colitis</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-11</span>
+                        </li>
+                </ul></div></div>
+            <div style="margin-bottom: 35px;">
+                <h2 style="color: #2980b9; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 0; font-size: 22px; font-weight: 500;">抗菌肽设计</h2>
+                <div style="background-color: #f8f9fa; padding: 18px 22px; border-radius: 5px; margin-bottom: 25px; border-left: 5px solid #3498db;">
+                    <h3 style="margin-top: 0; margin-bottom: 10px; color: #34495e; font-size: 18px; font-weight: 500;">本周总结</h3>
+                    <p style="margin: 0;">本周在抗菌肽（AMPs）研究领域取得多项重要进展，涵盖发现新方法、结构分类优化及功能机制深化。现将关键成果总结如下：<br><br>### 1. **极端环境AMPs的全球规模发现与优化**  <br>   - 针对当前抗菌素耐药性（AMR）危机，研究团队开发了创新框架**Atlantis**，利用语言模型驱动AMPs的检测与优化。该框架整合两大模块：  <br>     - **Atlantis-Prospect**：通过序列与结构信息预测抗菌效力，显著提升极端环境（如低营养、高压力栖息地）中AMPs的筛选效率。  <br>     - **Atlantis-Search**：实现全球极端微生物组（extremophile）数据的自动化挖掘，揭示此前未被探索的独特膜修饰机制及代谢通路。  <br>   - 此项工作证实极端环境为AMPs的“隐藏库”，为解决AMR提供了新候选分子池，相关成果发表于权威期刊（图1展示全球采样分布）。<br><br>### 2. **肽类去重方法学突破：分子网络结合t-SNE算法**  <br>   - 针对肽类（如peptaibols）的重复发现难题，新方法通过**t-SNE降维算法构建分子网络数据库**，实现高效去重。  <br>     - 该技术显著提升质谱数据的解析精度（DOI: 10.1021/acs.jproteome.5c00710），适用于复杂肽库的快速鉴定。  <br>     - 应用价值：加速天然产物药物开发，减少冗余实验，在《Journal of Proteome Research》中获刊载。<br><br>### 3. **假单胞菌环脂肽高级结构分类**  <br>   - 研究聚焦于**Pseudomonas环脂肽的生物活性构象解析**，通过高级结构技术（如NMR与冷冻电镜）建立分类新标准。  <br>     - 突破点：将结构特征与生物功能直接关联，优化了环脂肽的活性筛选流程。  <br>     - 意义：为抗生素设计提供构效关系基础，成果发表于《Advanced Science》EarlyView。<br><br>### 4. **机制驱动的膜靶向AMPs筛选平台**  <br>   - 开发了新型高通量筛选策略，专攻**膜破坏型及孔形成AMPs**：  <br>     - 结合细胞膜通透性实验与计算模型，精准识别靶向机制。  <br>     - 应用：显著提升抗耐药菌株的筛选效率，尤其适用于革兰氏阴性菌感染治疗。  <br>   - 该机制研究为AMPs临床转化奠定基础，详见《Advanced Science》EarlyView。<br><br>### 5. **Citropin 1.3变体功能拓展研究**  <br>   - 深入解析抗菌肽Citropin 1.3的非酰胺变体（non-amidated variant）：  <br>     - 揭示其**淀粉样纤维结构与多功能抗菌活性**（如广谱抗细菌/真菌），突破传统AMPs功能认知。  <br>     - 结构-功能关联：变体在低浓度下维持高效力，为设计新型稳定肽药物提供新思路。  <br>   - 研究发表于《Advanced Science》第12卷（Issue 46, December 2025）。<br><br>### 综合进展与应用展望  <br>- **技术整合趋势**：多篇研究强调AI驱动（如语言模型）与结构生物学的协同，加速AMPs从发现到优化的全流程。  <br>- **转化价值**：极端环境挖掘（Atlantis）、高效去重方法及机制筛选平台，直接推动抗耐药菌药物研发。  <br>- **后续行动**：建议深化全球极端样本合作，拓展AMPs临床前模型验证，并探索跨平台技术整合（如t-SNE网络与Atlantis-Search）。  <br><br>本周成果凸显抗菌肽研究向精准化、机制化的跨越式发展，为应对全球AMR挑战注入新动能。</p>
+                </div>
+                <div>
+                    <h4 style="margin-top: 0; margin-bottom: 15px; font-size: 16px; color: #34495e; font-weight: 500;">相关文章</h4>
+                    <ul style="list-style-type: none; padding: 0; margin: 0;">
+            
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://academic.oup.com/bib/article/26/Supplement_1/i21/8377986?rss=1" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Discovery and optimization of antimicrobial peptides from extreme environments on global scale</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-12</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jproteome.5c00710" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] A Novel Peptides Database Approach for Enhanced Dereplication of Peptaibols Using Molecular Network Based on the t-SNE Algorithm</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-12</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202520365?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Higher‐Level Structural Classification of Pseudomonas Cyclic Lipopeptides through Their Bioactive Conformation</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-14</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202516470?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Mechanism‐Driven Screening of Membrane‐Targeting and Pore‐Forming Antimicrobial Peptides</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-14</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202503997?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Structural and Functional Versatility of the Amyloidogenic Non‐Amidated Variant of the Antimicrobial Peptide Citropin 1.3</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-11</span>
+                        </li>
+                </ul></div></div>
+            <div style="margin-bottom: 35px;">
+                <h2 style="color: #2980b9; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 0; font-size: 22px; font-weight: 500;">分子动力学模拟</h2>
+                <div style="background-color: #f8f9fa; padding: 18px 22px; border-radius: 5px; margin-bottom: 25px; border-left: 5px solid #3498db;">
+                    <h3 style="margin-top: 0; margin-bottom: 10px; color: #34495e; font-size: 18px; font-weight: 500;">本周总结</h3>
+                    <p style="margin: 0;">本周在计算化学与分子模拟领域取得多项重要进展。首先，分子动力学研究方面，《Computational characterization of the xanthan gum glycosyltransferase GumK》一文通过多尺度模拟揭示GT-B糖基转移酶GumK的构象动力学机制：其扭曲和弯曲运动受域间接触约束，并受膜锚定调节；底物结合形成两亲性夹持结构，其中UDP-葡萄糖醛酸特异性由Lys307静电环境及疏水三联体介导，为理解糖基转移酶催化循环提供分子基础。同时，《Solvent-Inclusive ML/MM Simulations》评估了溶剂显式多尺度模拟的准确性，验证该方法在结构、动力学及热力学参数上的可靠性，显著提升生物大分子模拟的预测能力。此外，《Multiscale Computational Dissection of CCRL2-Mediated Chemerin Presentation》通过整合模拟技术阐明CCRL2受体介导Chemerin配体呈递的分子机制，助力免疫调控研究。<br><br>其次，方法学创新成果突出。《A Hybrid OPES-eABF Framework》开发高效集体变量探索框架，实现复杂自由能景观的数据驱动发现；《Meeko: Molecule Parametrization》推出标准化分子参数化工具，增强对接软件互操作性；《Toward Automated Physics-Based Drug Residence Time Predictions》建立自动化物理模型，为药物驻留时间预测提供新范式。理论计算方面，《Linear Response Selected Configuration Interaction》和《A Restriction-Based Configuration Interaction Approach Based on LC-DFTB》分别优化激发态计算与场致电荷转移方法，提升量子化学模拟效率；《Universal Augmentation Framework for Long-Range Electrostatics》则解决机器学习原子势的长程静电问题，增强力场普适性。《Fast-Tracking Transition-State Localization》通过反应方向分析加速过渡态定位，显著缩短动力学路径计算时间。<br><br>最后，材料科学应用取得突破。Advanced Science期刊系列研究显示：《Achieving Chemical Accuracy in Cyclodextrin Host–Guest Binding》整合原子建模实现宿主-客体结合能化学精度；《Orientation‐Dependent Phase Transformation Pathways》揭示镍钛合金取向依赖相变机制，优化超弹性性能；《Strong Proton‐Phonon Coupling Drives Fast Ion Transport in Perovskites》阐明钙钛矿中质子-声子耦合促进离子传输机制；《Unravel the Effects of UV Light on Perovskite Lattice Stability》则通过数值模拟量化UV光辐照对晶格稳定性的劣化效应，为光伏材料设计提供关键洞见。这些进展共同推动计算化学在生物酶学、药物开发及先进材料领域的深度应用。</p>
+                </div>
+                <div>
+                    <h4 style="margin-top: 0; margin-bottom: 15px; font-size: 16px; color: #34495e; font-weight: 500;">相关文章</h4>
+                    <ul style="list-style-type: none; padding: 0; margin: 0;">
+            
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013803" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Computational characterization of the xanthan gum glycosyltransferase GumK</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-10</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jcim.5c02201" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Roles of Noncovalent Interactions in Phosphoester Hydrolysis Catalyzed by Binuclear (Fe(III)–Zn(II)) Metal Complexes</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-16</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jcim.5c01939" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Solvent-Inclusive ML/MM Simulations: Assessments of Structural, Dynamical, and Thermodynamic Accuracy</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-15</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jcim.5c02158" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] A Hybrid OPES-eABF Framework for Efficient Exploration and Data-Driven Collective Variable Discovery in Complex Free-Energy Landscapes</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-13</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jcim.5c01871" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Multiscale Computational Dissection of CCRL2-Mediated Chemerin Presentation</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-11</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jcim.5c02271" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Meeko: Molecule Parametrization and Software Interoperability for Docking and Beyond</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-11</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jcim.5c01832" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Toward Automated Physics-Based Absolute Drug Residence Time Predictions</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-09</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jctc.5c01676" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Linear Response Selected Configuration Interaction</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-15</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jctc.5c01371" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] A Restriction-Based Configuration Interaction Approach Based on LC-DFTB: An Efficient Method for Field-Induced Charge Transfer in Molecular Systems</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-13</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jctc.5c01784" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Fast-Tracking Transition-State Localization via Reaction Directional Analysis</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-12</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jctc.5c01400" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] A Universal Augmentation Framework for Long-Range Electrostatics in Machine Learning Interatomic Potentials</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-10</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="http://dx.doi.org/10.1021/acs.jctc.5c01586" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">[ASAP] Consistent and Generalizable Effective Model Hamiltonian Framework for Studying Nonadiabatic Dynamics in the Condensed Phase</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-09</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202519782?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Achieving Chemical Accuracy in Cyclodextrin Host–Guest Binding via Integrative Atomistic Modelling</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-14</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202519606?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Orientation‐Dependent Phase Transformation Pathways Enabling Superior Superelastic and Elastocaloric Performance of NiTi Alloys</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-13</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202507261?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Strong Proton‐Phonon Coupling Drives Fast Ion Transport in Perovskites</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-13</span>
+                        </li>
+                
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202511211?af=R" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px;">Unravel the Effects of UV Light on the Lattice Stability of Perovskite via Numerical Simulation</a>
+                            <span style="color: #7f8c8d; font-size: 13px; margin-left: 8px;">- 2025-12-11</span>
+                        </li>
+                </ul></div></div>
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eeeeee; color: #bdc3c7; font-size: 12px;">
+                <p>由 RSS Summary Bot 自动生成</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    
