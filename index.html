@@ -1,50 +1,312 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>每周汇总</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每周汇总 - 首页</title>
+    <style>
+        /* 复刻提供的风格 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.7;
+            color: #4a4a4a;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+            min-height: 300px; /* 防止内容加载时高度跳动 */
+        }
+
+        /* 头部样式 */
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+            margin-bottom: 35px;
+        }
+
+        h1 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 15px;
+            margin-top: 8px;
+        }
+
+        /* 按钮样式 */
+        .btn-primary {
+            display: inline-block;
+            background-color: #3498db;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-1px);
+            color: #ffffff !important; /* 覆盖全局 a:hover */
+        }
+
+        /* 列表部分样式 */
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .summary-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .summary-item {
+            background-color: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+            transition: background-color 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .summary-item:hover {
+            background-color: #f1f4f6;
+        }
+
+        .summary-link {
+            text-decoration: none;
+            color: #34495e;
+            font-weight: 600;
+            font-size: 18px;
+            display: block;
+            width: 100%;
+        }
+
+        .summary-link:hover {
+            color: #e74c3c !important;
+        }
+
+        /* 状态提示样式 */
+        .status-box {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px auto;
+        }
+
+        .error-msg {
+            color: #e74c3c;
+            background: #fdeaea;
+            padding: 15px;
+            border-radius: 6px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 隐藏类 */
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>正在跳转到最新的每周汇总...</h1>
+
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>每周 RSS 动态总结</h1>
+            <p class="subtitle" id="current-status">正在获取最新数据...</p>
+        </div>
+
+        <!-- 加载中状态 -->
+        <div id="loading-view" class="status-box">
+            <div class="loading-spinner"></div>
+            <p style="color: #666;">正在连接 GitHub 仓库获取周报...</p>
+        </div>
+
+        <!-- 错误状态 -->
+        <div id="error-view" class="status-box hidden">
+            <div class="error-msg">
+                <h3 style="margin-top:0; color:#c0392b;">⚠️ 加载失败</h3>
+                <p id="error-text" style="margin-bottom: 10px; font-size: 14px;"></p>
+                <button onclick="location.reload()" style="cursor:pointer; padding: 5px 15px; border:1px solid #c0392b; background:white; color:#c0392b; border-radius:4px;">重试</button>
+            </div>
+        </div>
+
+        <!-- 内容展示区 (成功加载后显示) -->
+        <div id="content-view" class="hidden">
+            <!-- 核心操作区：最新一期 -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <p style="margin-bottom: 15px; color: #555;">阅读最新发布的汇总：</p>
+                <a id="btn-latest" href="#" class="btn-primary">
+                    🚀 跳转到最新周报
+                </a>
+                <p id="latest-date-hint" style="font-size: 13px; color: #888; margin-top: 10px;"></p>
+            </div>
+
+            <!-- 近期 Top 3 列表 -->
+            <div>
+                <h2>近期发布 (Top 3)</h2>
+                <div id="list-container" style="margin-top: 20px;">
+                    <!-- JavaScript 将在这里插入数据 -->
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+                <a href="https://github.com/KKKangKaiKK/WeeklyScholarSummary/tree/main/summaries" target="_blank" style="color: #3498db; text-decoration: none; font-size: 14px;">🔗 查看 GitHub 仓库所有历史归档</a>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // 替换为您的GitHub信息
-        const owner = 'kkkangkaikk';
-        const repo = 'WeeklyScholarSummary';
-        // 如果文件在根目录，将path留空 ('')
-        const path = ''; 
+        // 配置信息
+        const config = {
+            owner: 'KKKangKaiKK',
+            repo: 'WeeklyScholarSummary',
+            path: '', // 如果summaries在根目录则留空
+            timeout: 8000 // 超时时间：8秒
+        };
 
-        // 构建API请求URL
-        const apiUrl = `https://api.github.com/repos/KKKangKaiKK/WeeklyScholarSummary/contents/summaries`;
+        const apiUrl = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/summaries`;
+        const baseUrl = `https://${config.owner.toLowerCase()}.github.io/${config.repo}/summaries/`;
 
-        // 使用fetch API获取文件夹内容
-        fetch(apiUrl)
-            .then(response => response.json())
+        // DOM 元素
+        const loadingView = document.getElementById('loading-view');
+        const contentView = document.getElementById('content-view');
+        const errorView = document.getElementById('error-view');
+        const errorText = document.getElementById('error-text');
+        const currentStatus = document.getElementById('current-status');
+        const btnLatest = document.getElementById('btn-latest');
+        const listContainer = document.getElementById('list-container');
+        const latestDateHint = document.getElementById('latest-date-hint');
+
+        // 超时 Promise
+        const timeoutPromise = new Promise((_, reject) => {
+            setTimeout(() => {
+                reject(new Error("请求超时：GitHub API 响应时间过长，请检查网络连接。"));
+            }, config.timeout);
+        });
+
+        // 获取数据 Promise
+        const fetchPromise = fetch(apiUrl).then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP 错误: ${response.status} ${response.statusText}`);
+            }
+            return response.json();
+        });
+
+        // 执行逻辑
+        Promise.race([fetchPromise, timeoutPromise])
             .then(data => {
-                // 筛选出符合 年-月-日.html 格式的文件
+                // 1. 筛选符合 YYYY-MM-DD.html 格式的文件
                 const summaryFiles = data.filter(file => {
-                    // 使用正则表达式匹配文件名格式
                     return /^\d{4}-\d{2}-\d{2}\.html$/.test(file.name);
                 });
 
-                if (summaryFiles.length > 0) {
-                    // 基于文件名进行排序，找到最新的文件
-                    summaryFiles.sort((a, b) => b.name.localeCompare(a.name));
-                    const latestFile = summaryFiles[0];
-
-                    // 构建跳转链接
-                    // 注意：这里需要跳转到GitHub Pages的URL，而不是GitHub仓库的URL
-                    const redirectUrl = `https://kkkangkaikk.github.io/WeeklyScholarSummary/summaries/${path ? path + '/' : ''}${latestFile.name}`;
-                    
-                    // 执行跳转
-                    window.location.href = redirectUrl;
-                } else {
-                    document.body.innerHTML = '<h1>未找到任何周报文件。</h1>';
+                if (summaryFiles.length === 0) {
+                    throw new Error("仓库中未找到符合格式 (YYYY-MM-DD.html) 的周报文件。");
                 }
+
+                // 2. 排序 (文件名降序，即日期从新到旧)
+                summaryFiles.sort((a, b) => b.name.localeCompare(a.name));
+
+                // 3. 提取 Top 3
+                const topFiles = summaryFiles.slice(0, 3);
+                const latestFile = summaryFiles[0];
+
+                // 4. 渲染 UI
+                renderUI(latestFile, topFiles);
             })
             .catch(error => {
-                console.error('获取文件列表时出错:', error);
-                document.body.innerHTML = '<h1>加载最新周报失败，请检查网络或配置。</h1>';
+                showError(error);
             });
+
+        function renderUI(latest, list) {
+            // 隐藏加载，显示内容
+            loadingView.classList.add('hidden');
+            contentView.classList.remove('hidden');
+            
+            // 更新副标题日期为今天
+            const today = new Date().toISOString().split('T')[0];
+            currentStatus.textContent = `访问日期: ${today}`;
+
+            // 设置最新按钮链接
+            const latestUrl = baseUrl + (config.path ? config.path + '/' : '') + latest.name;
+            btnLatest.href = latestUrl;
+            latestDateHint.textContent = `最新一期：${latest.name.replace('.html', '')}`;
+
+            // 生成列表
+            let listHtml = '<ul class="summary-list">';
+            list.forEach(file => {
+                const fileUrl = baseUrl + (config.path ? config.path + '/' : '') + file.name;
+                const dateText = file.name.replace('.html', '');
+                
+                listHtml += `
+                    <li class="summary-item">
+                        <a href="${fileUrl}" class="summary-link">
+                            📅 ${dateText} 汇总
+                        </a>
+                        <span style="font-size: 12px; color: #999;">HTML</span>
+                    </li>
+                `;
+            });
+            listHtml += '</ul>';
+            listContainer.innerHTML = listHtml;
+        }
+
+        function showError(error) {
+            console.error(error);
+            loadingView.classList.add('hidden');
+            contentView.classList.add('hidden');
+            errorView.classList.remove('hidden');
+            currentStatus.textContent = "状态异常";
+            currentStatus.style.color = "#e74c3c";
+            
+            // 友好的错误提示
+            let msg = error.message;
+            if (msg.includes('Failed to fetch')) {
+                msg = "网络请求失败，可能是网络问题或 GitHub API 访问受限。";
+            }
+            errorText.textContent = msg;
+        }
     </script>
 </body>
 </html>
